@@ -194,7 +194,8 @@ But because these angles were computed using anti-triangle functions, the soluti
 
 The coding part is very much alike the process discussed above. The only thing needs to be shown here is the solution test part. The code go as follows:
 
-#compute T3_6
+
+		#compute T3_6
 		lhs = simplify(T3_4*T4_5*T5_6)
 		lhsr = lhs [0:3,0:3]
 

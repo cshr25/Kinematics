@@ -49,25 +49,29 @@ The modified DH transformation matric has the form of
                [                   0,                   0,            0,               1]
 Each individual transormation matrices between joints could be easily calculated. 
 
-The homogeneous transform between base_link and gripper_link should have a form as shown below
+The homogeneous transform between base_link and gripper_link should have a form as shown below__
+
 ![alt text][image2]
+
 Where R is the rotation matrix calculated by doing a rotation composition such as 
 
 R= Rz * Ry * Rx
 
 where Rz, Ry and Rx are rotaion matrix along z,y,and x axis:
 
-R_x = Matrix([[ 1,              0,      0],
-              [ 0,        cos(xq), -sin(xq)],
-             [ 0,        sin(xq),  cos(xq)]])
+R_x = __
+				| 1 |            0 |      0  |
+				|---| ---					 |---			 |	
+				| 0	|       cos(xq)| -sin(xq)|	
+ 				| 0	|       sin(xq)|  cos(xq)|
 	
-R_y = Matrix([[ cos(yq),        0,  sin(yq)],
-             [       0,        1,        0],
-             [-sin(yq),        0,  cos(yq)]])
+R_y = [ cos(yq),        0,  sin(yq)]
+[       0,        1,        0]
+[-sin(yq),        0,  cos(yq)]
 	
-R_z = Matrix([[ cos(zq), -sin(zq),        0],
-             [ sin(zq),  cos(zq),        0],
-              [ 0,              0,        1]])
+R_z =[ cos(zq), -sin(zq),        0]__
+		[ sin(zq),  cos(zq),        0]__
+		[ 0,              0,        1]
               
 And the angles substituted in are yaw (z axis), pitch (y axis) and roll (x axis) angles.
 And the T vector is the origin shift between end-effector and the base link.
